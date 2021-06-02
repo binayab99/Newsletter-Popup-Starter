@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap");
+
+$blue: #2355f2;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background: no-repeat center/cover url("/Assets/Background.png");
+}
+
+form {
+  > p {
+    text-align: left;
+    padding-inline: 0.5rem;
+    color: #b7bbc9;
+  }
+
+  > div {
+    display: grid;
+    grid-template-columns: 70% auto;
+    gap: 0.5rem;
+  }
+}
+
+input {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  height: 40px;
+  padding-inline: 1rem;
+  border-radius: 8px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &[type="email"] {
+    border: 1px solid #e6e8f0;
+    background-color: #f5f7fa;
+
+    &::placeholder {
+      color: #b7bbc9;
+    }
+  }
+
+  &[type="submit"] {
+    border: none;
+    font-weight: 500;
+    color: white;
+    background-color: $blue;
+    cursor: pointer;
+  }
+}
+
+.container {
+  &-main {
+    display: grid;
+    grid-template-rows: 1fr, 1fr;
+    width: 370px;
+    height: auto;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &-pattern {
+    padding: 4rem 4rem;
+    background: no-repeat center/cover url("/Assets/Pattern.png"), $blue;
+
+    h2 {
+      color: white;
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  }
+
+  &-subscribe {
+    padding: 2rem 1rem;
+    background-color: white;
+    color: #595959;
+  }
+
+  &-avatar {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat (2, 1fr);
+    grid-template-areas: "avatar name" "avatar desc";
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+    margin-bottom: 1rem;
+    color: #b7bbc9;
+
+    .avatar {
+      grid-area: avatar;
+      height: 45px;
+      width: 45px;
+      background: no-repeat center/contain url("/Assets/User\ Avatar.svg");
+    }
+
+    .name {
+      grid-area: name;
+      font-weight: bold;
+      color: black;
+    }
+
+    .desc {
+      grid-area: desc;
+      color: #595959;
+    }
+  }
+}
